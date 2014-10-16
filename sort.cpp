@@ -28,9 +28,8 @@ void SortString(char s[], int startIndex, int endIndex) {
 
 	Swap(s[startIndex], s[minIndex]);
 
-	SortString(s, ++startIndex, endIndex);
-	
-	return;
+	return SortString(s, ++startIndex, endIndex);
+
 }
 
 
