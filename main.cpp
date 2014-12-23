@@ -28,12 +28,13 @@ int main() {
 }
 
 void PrintInstructions() {
-    cout << "This program takes a string and sorts"
-         << "its characters in ASCIIbetical order." << endl;
     cout << endl;
+    cout << "This program takes a string and sorts "
+         << "its characters in ASCIIbetical order." << endl;
 }
 
 void GetInput(char* s) {
+    cout << endl;
     cout << "Input a string to sort:" << endl;
     cin.getline(s, MAX_STR_LEN);
 }
