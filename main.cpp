@@ -3,19 +3,37 @@
 
 using namespace std;
 
+// Function Prototypes
+void PrintInstructions();
+void GetInput(char* input);
+
+// Constants
+const short MAX_STR_LEN = 512;
+
 int main() {
 
-	char s[] = "poiuytrewqasdfghjklmnbvcxz";
+    PrintInstructions();
 
-	int l = static_cast<int>(strlen(s)); 
-	int endIndex = l - 1;
+    char input[MAX_STR_LEN];
+    while (true) {
+        GetInput(input);
+        int l = strlen(input);
+        if (l == 0) break;
+        int endIndex = l - 1;
+        SortString(input, 0, endIndex);
+        cout << input << endl;
+    }
 
-	cout << s << endl;
+    return 0;
+}
 
-	SortString(s, 0, endIndex);
+void PrintInstructions() {
+    cout << "This program takes a string and sorts"
+         << "its characters in ASCIIbetical order." << endl;
+    cout << endl;
+}
 
-	cout << s << endl;
-
-	return 0;	
-
+void GetInput(char* s) {
+    cout << "Input a string to sort:" << endl;
+    cin.getline(s, MAX_STR_LEN);
 }
